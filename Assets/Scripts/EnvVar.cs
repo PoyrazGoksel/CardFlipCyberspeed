@@ -2,4 +2,5 @@
 {
     public const string SettingsPath = "Settings/";
     public const string GameName = "CardFlip";
+    public const string SaveExt = ".sav";
 }

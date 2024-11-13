@@ -104,18 +104,11 @@ namespace Views
             
             TweenContainer.AddSequence = DOTween.Sequence();
 
-            Tween scaleTween = _transform.DOScale(Vector3.zero, _settings.DestroyAnimDur);
+            Tween scaleTweenUp = _transform.DOScale(Vector3.one * _settings.DestroySizeMax, _settings.DestroyScaleUpDur);
+            Tween scaleTweenDown = _transform.DOScale(Vector3.zero, _settings.DestroyScaleDownDur);
             
-            
-            // Vector3 jumpPos = _initPos + new Vector3(0f, _settings.FlipJumpHeight, 0f);
-
-            // float animDurHalf = _settings.FlipAnimDur * 0.5f;
-            // Tween jumpTween = _transform.DOMove(jumpPos, animDurHalf);
-            // Tween dropTween = _transform.DOMove(_initPos, animDurHalf);
-
-            TweenContainer.AddedSeq.Append(scaleTween);
-            // TweenContainer.AddedSeq.Insert(0f, jumpTween);
-            // TweenContainer.AddedSeq.Insert(animDurHalf, dropTween);
+            TweenContainer.AddedSeq.Append(scaleTweenUp);
+            TweenContainer.AddedSeq.Append(scaleTweenDown);
 
             TweenContainer.AddedSeq.SetEase(_settings.DestroyAnimEase);
             
@@ -124,7 +117,7 @@ namespace Views
 
         private void OnDestroyAnimComplete()
         {
-            //gameObject.Destroy();
+            gameObject.Destroy();
         }
 
         protected override void RegisterEvents()
@@ -159,14 +152,18 @@ namespace Views
             public Vector3 ClosedRotEul => _closedRotEul;
             public float FlipJumpHeight => _flipJumpHeight;
             public float FlipAnimDur => _flipAnimDur;
-            public float DestroyAnimDur => _destroyAnimDur;
             public Ease DestroyAnimEase => _destroyAnimEase;
+            public float DestroySizeMax => _destroySizeMax;
+            public float DestroyScaleUpDur => _destroyScaleUpDur = 0.1f;
+            public float DestroyScaleDownDur => _destroyScaleDownDur = 0.4f;
             [SerializeField] private Vector3 _openRotEul = new(0f, 0f, 0f);
             [SerializeField] private Vector3 _closedRotEul = new(0f, 0f, -180f);
             [SerializeField] private float _flipJumpHeight = 1f;
             [SerializeField] private float _flipAnimDur = 0.5f;
-            [SerializeField] private float _destroyAnimDur = 0.5f;
             [SerializeField] private Ease _destroyAnimEase = Ease.Linear;
+            [SerializeField] private float _destroySizeMax = 1.1f;
+            [SerializeField] private float _destroyScaleUpDur;
+            [SerializeField] private float _destroyScaleDownDur;
         }
     }
 

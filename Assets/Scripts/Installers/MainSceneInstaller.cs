@@ -14,7 +14,7 @@ namespace Installers
         
         private void LoadLevel()
         {
-             _currLevel = GameSettings.GetLevel(PlayerVM.Level);
+             _currLevel = GameSettings.GetLevel(PlayerVM.Level % GameSettings.GetLevelCount());
 
              Instantiate(_currLevel);
         }

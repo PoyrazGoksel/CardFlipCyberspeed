@@ -35,7 +35,9 @@ MonoBehaviour:
     _closedRotEul: {x: 0, y: 0, z: -180}
     _flipJumpHeight: 1
     _flipAnimDur: 0.5
-    _destroyAnimDur: 1
     _destroyAnimEase: 1
+    _destroySizeMax: 1.1
+    _destroyScaleUpDur: 0.1
+    _destroyScaleDownDur: 0.4
   _gridSettings:
     _cardShowDur: 1

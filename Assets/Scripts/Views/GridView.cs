@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 using Events;
 using Extensions.Unity;
 using Extensions.Unity.Entities;
@@ -19,6 +20,7 @@ namespace Views
         [SerializeField] private Bounds _levelBounds;
         private Settings _settings;
         private ICard _lastCard;
+        private bool _isGridComplete;
 
         private void Awake()
         {
@@ -48,6 +50,8 @@ namespace Views
 
         private void CompareCards(ICard arg0)
         {
+            if(_lastCard == arg0) return;
+            
             if(_lastCard.ID == arg0.ID)
             {
                 _coordToCardDict[_lastCard.Coords] = null;
@@ -55,6 +59,8 @@ namespace Views
 
                 _lastCard.Destroy();
                 arg0.Destroy();
+
+                CheckGridComplete();
             }
             else
             {
@@ -63,6 +69,17 @@ namespace Views
             }
             
             _lastCard = null;
+        }
+
+        private void CheckGridComplete()
+        {
+            if(_isGridComplete) return;
+            
+            if(_coordToCardDict._tValues.Any() == false)
+            {
+                _isGridComplete = true;
+                GridEvents.GridComplete?.Invoke();
+            }
         }
 
         protected override void RegisterEvents()

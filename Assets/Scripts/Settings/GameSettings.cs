@@ -55,6 +55,11 @@ namespace Settings
             return _cardPrefabsByID.Random();
         }
 
+        public int GetLevelCount()
+        {
+            return _levelsByID.Count;
+        }
+
         public GameObject GetLevel(int id)
         {
             if(id >= _levelsByID.Count)
