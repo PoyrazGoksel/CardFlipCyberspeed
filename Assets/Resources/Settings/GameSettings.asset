@@ -27,3 +27,15 @@ MonoBehaviour:
   - {fileID: 4315770766099665156, guid: 1110cfb7928aa8f449e280bf964a13d7, type: 3}
   - {fileID: 5113741613039659441, guid: c7e20bdb8a729014c804d7002ce6fbc7, type: 3}
   - {fileID: 6096609333129836577, guid: 546e5209543d3864eba14600a46abd34, type: 3}
+  _levelsByID:
+  - {fileID: 6579358503572888850, guid: 73e0626a5bcf77a4dacd28af568c2581, type: 3}
+  - {fileID: 4177937022943547267, guid: 7102152f26f6a7e4eb3b530ff243e216, type: 3}
+  _cardSettings:
+    _openRotEul: {x: 0, y: 0, z: 0}
+    _closedRotEul: {x: 0, y: 0, z: -180}
+    _flipJumpHeight: 1
+    _flipAnimDur: 0.5
+    _destroyAnimDur: 1
+    _destroyAnimEase: 1
+  _gridSettings:
+    _cardShowDur: 1

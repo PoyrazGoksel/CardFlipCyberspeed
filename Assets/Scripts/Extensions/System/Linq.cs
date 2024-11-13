@@ -18,6 +18,18 @@ namespace Extensions.System
             return doToAll;
         }
         
+        public static void Shuffle<T>(this List<T> list)
+        {
+            Random rng = new();
+            
+            int n = list.Count;
+            for (int i = n - 1; i > 0; i--)
+            {
+                int j = rng.Next(i + 1);
+                (list[i], list[j]) = (list[j], list[i]);
+            }
+        }
+        
         public static int ToIndex(this int i)
         {
             if (i <= 0)
