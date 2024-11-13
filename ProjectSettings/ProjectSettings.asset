@@ -152,7 +152,9 @@ PlayerSettings:
   resolutionScalingMode: 0
   androidSupportedAspectRatio: 1
   androidMaxAspectRatio: 2.1
-  applicationIdentifier: {}
+  applicationIdentifier:
+    Android: com.DefaultCompany.CardFlipCyberspeed
+    Standalone: com.DefaultCompany.CardFlipCyberspeed
   buildNumber:
     Standalone: 0
     iPhone: 0
@@ -775,8 +777,14 @@ PlayerSettings:
   XboxOneOverrideIdentityPublisher: 
   vrEditorSettings: {}
   cloudServicesEnabled:
-    Collab: 1
+    Build: 0
+    Collab: 0
+    Game Performance: 0
+    Legacy Analytics: 0
+    Purchasing: 0
+    UDP: 0
     UNet: 1
+    Unity Ads: 0
   luminIcon:
     m_Name: 
     m_ModelFolderPath: 
@@ -790,11 +798,11 @@ PlayerSettings:
     m_VersionName: 
   apiCompatibilityLevel: 6
   activeInputHandler: 0
-  cloudProjectId: 
+  cloudProjectId: 67ad2147-1cb8-4080-a857-5b050118d051
   framebufferDepthMemorylessMode: 0
   qualitySettingsNames: []
-  projectName: 
-  organizationId: 
+  projectName: CardFlipCyberspeed
+  organizationId: poyraz-12c53d07-0e66-4ffe-9280-a385907509cf
   cloudEnabled: 0
   legacyClampBlendShapeWeights: 0
   playerDataPath: 
