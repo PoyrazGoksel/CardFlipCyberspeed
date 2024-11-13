@@ -43,3 +43,7 @@ MonoBehaviour:
     _destroyScaleDownDur: 0.4
   _gridSettings:
     _cardShowDur: 1
+  _audioPlayerSettings:
+    _matchSfx: {fileID: 8300000, guid: 0b2dc3f8bd139b04d9328ed800a6a70c, type: 3}
+    _flipSfx: {fileID: 8300000, guid: 45f0c9cf221246c4088140989f3c5c0e, type: 3}
+    _levelCompleteSfx: {fileID: 8300000, guid: 3a6cd568bbc5b4146b5763b9bf28ba85, type: 3}

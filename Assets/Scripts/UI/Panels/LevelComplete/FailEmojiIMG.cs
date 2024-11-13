@@ -22,7 +22,7 @@ namespace UI.Panels.LevelComplete
 
             if(Application.isPlaying == false) return;
             
-            _transform.DoYoYo(Vector3.one * 1.1f, 1f);
+            TweenContainer.AddTween = _transform.DoYoYo(Vector3.one * 1.1f, 1f);
         }
 
         protected override void UnRegisterEvents()

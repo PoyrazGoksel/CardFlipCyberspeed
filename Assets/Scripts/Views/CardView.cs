@@ -46,6 +46,7 @@ namespace Views
 
         private void OpenCard()
         {
+            CardEvents.PreCardOpen?.Invoke();
             _isBusy = true;
             TweenContainer.AddSequence = DOTween.Sequence();
 

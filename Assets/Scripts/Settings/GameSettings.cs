@@ -14,13 +14,13 @@ namespace Settings
     {
         public CardView.Settings CardSettings => _cardSettings;
         public GridView.Settings GridSettings => _gridSettings;
+        public AudioPlayer.Settings AudioPlayerSettings => _audioPlayerSettings;
         [SerializeField] private List<GameObject> _cardPrefabsByID = new();
         [SerializeField] private List<GameObject> _levelsByID = new();
         [SerializeField] private CardView.Settings _cardSettings;
         [SerializeField] private GridView.Settings _gridSettings;
-
+        [SerializeField] private AudioPlayer.Settings _audioPlayerSettings;
 #if UNITY_EDITOR
-
         [Button]
         public void AssignIndexToCardIDs(bool areYouSure)
         {

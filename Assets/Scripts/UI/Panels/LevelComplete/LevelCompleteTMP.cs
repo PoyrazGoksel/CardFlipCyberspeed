@@ -23,12 +23,13 @@ namespace UI.Panels.LevelComplete
 
         private void OnGridComplete()
         {
-            _transform.DoYoYo(Vector3.one * 1.1f, 1f); //TODO: Move to settings
+            TweenContainer.AddTween = _transform.DoYoYo(Vector3.one * 1.1f, 1f); //TODO: Move to settings
         }
 
         protected override void UnRegisterEvents()
         {
             GridEvents.GridComplete -= OnGridComplete;
+            TweenContainer.Clear();
         }
     }
 }
