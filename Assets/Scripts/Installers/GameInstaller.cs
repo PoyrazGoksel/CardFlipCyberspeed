@@ -1,6 +1,8 @@
 ﻿using Events;
 using Settings;
+using UI.Events;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using ViewModels;
 
 namespace Installers
@@ -34,6 +36,20 @@ namespace Installers
                 Debug.LogWarning("Trying to initialize GameInstaller twice?");
             }
         }
+        
+        [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.AfterSceneLoad)]
+        public static void AfterFirstScene()
+        {
+            if(SceneManager.GetActiveScene().name == EnvVar.LoginSceneName)
+            {
+                LoadNextLevel();
+            }
+        }
+
+        private static void LoadNextLevel()
+        {
+            SceneManager.LoadScene(EnvVar.MainSceneName);
+        }
 
         private void InstallSettings()
         {
@@ -50,6 +66,12 @@ namespace Installers
         private void RegisterEvents()
         {
             GameEvents.PreLevelLoaded += OnNewLevelLoaded;
+            UIEvents.NextLevelClick += OnNextLevelClick;
+        }
+
+        private void OnNextLevelClick()
+        {
+            LoadNextLevel();
         }
 
         private void OnNewLevelLoaded()

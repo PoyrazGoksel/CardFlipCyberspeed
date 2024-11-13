@@ -75,7 +75,7 @@ namespace Views
         {
             if(_isGridComplete) return;
             
-            if(_coordToCardDict._tValues.Any() == false)
+            if(_coordToCardDict.Any(e => e.Value != null) == false)
             {
                 _isGridComplete = true;
                 GridEvents.GridComplete?.Invoke();
