@@ -60,7 +60,6 @@ namespace Installers
         private void InstallViewModels()
         {
             PlayerVM = new PlayerVM();
-            GameEvents.PlayerLoaded?.Invoke();
         }
 
         private void RegisterEvents()

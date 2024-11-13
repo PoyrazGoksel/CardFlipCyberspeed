@@ -30,6 +30,8 @@ MonoBehaviour:
   _levelsByID:
   - {fileID: 6579358503572888850, guid: 73e0626a5bcf77a4dacd28af568c2581, type: 3}
   - {fileID: 4177937022943547267, guid: 7102152f26f6a7e4eb3b530ff243e216, type: 3}
+  - {fileID: 2698758658299828624, guid: 2bba9b15d859f3a4cba4c494d5bcb2fa, type: 3}
+  - {fileID: 7973512396144166862, guid: a94149f24fbf329418a76a2de9cbeccc, type: 3}
   _cardSettings:
     _openRotEul: {x: 0, y: 0, z: 0}
     _closedRotEul: {x: 0, y: 0, z: -180}

@@ -17,16 +17,8 @@ namespace Views
             float halfHeight = (targetBounds.size.z * 0.5f) + _padding;
             float halfWidth = (targetBounds.size.x * 0.5f) + _padding;
             
-            float requiredDistance;
-            if (targetBounds.size.x > targetBounds.size.z)
-            {
-                float horizontalFOV = 2 * Mathf.Atan(Mathf.Tan(verticalFOV / 2) * aspectRatio);
-                requiredDistance = halfWidth / Mathf.Tan(horizontalFOV / 2);
-            }
-            else
-            {
-                requiredDistance = halfHeight / Mathf.Tan(verticalFOV / 2);
-            }
+            float horizontalFOV = 2 * Mathf.Atan(Mathf.Tan(verticalFOV / 2) * aspectRatio);
+            float requiredDistance = halfWidth / Mathf.Tan(horizontalFOV / 2);
 
             Vector3 center = targetBounds.center;
             Vector3 cameraDirection = _cam.transform.forward;

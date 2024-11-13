@@ -60,12 +60,16 @@ namespace Views
                 _lastCard.Destroy();
                 arg0.Destroy();
 
+                GridEvents.Match?.Invoke();
+                
                 CheckGridComplete();
             }
             else
             {
                 _lastCard.Close();
                 arg0.Close();
+                
+                GridEvents.MatchFail?.Invoke();
             }
             
             _lastCard = null;

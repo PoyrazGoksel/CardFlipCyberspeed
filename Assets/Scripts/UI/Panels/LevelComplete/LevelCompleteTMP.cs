@@ -8,10 +8,12 @@ namespace UI.Panels.LevelComplete
     public class LevelCompleteTMP : UITMP, ITweenContainerBind
     {
         public ITweenContainer TweenContainer{get;set;}
+        private Transform _transform;
 
         private void Awake()
         {
             TweenContainer = TweenContain.Install(this);
+            _transform = transform;
         }
 
         protected override void RegisterEvents()
@@ -21,7 +23,7 @@ namespace UI.Panels.LevelComplete
 
         private void OnGridComplete()
         {
-            transform.DoYoYo(Vector3.one * 1.1f, 1f);
+            _transform.DoYoYo(Vector3.one * 1.1f, 1f); //TODO: Move to settings
         }
 
         protected override void UnRegisterEvents()

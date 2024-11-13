@@ -31,6 +31,7 @@ namespace Installers
 
             GameEvents.PreLevelLoaded?.Invoke();
             LoadLevel();
+            GameEvents.LevelLoaded?.Invoke();
         }
 
         protected override void UnRegisterEvents()

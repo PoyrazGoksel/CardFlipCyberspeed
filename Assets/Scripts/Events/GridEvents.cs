@@ -8,5 +8,7 @@ namespace Events
         public static UnityAction<Bounds> GridStart;
         public static UnityAction CardShowComplete;
         public static UnityAction GridComplete;
+        public static UnityAction Match;
+        public static UnityAction MatchFail;
     }
 }

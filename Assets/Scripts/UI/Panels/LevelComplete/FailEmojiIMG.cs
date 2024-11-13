@@ -6,11 +6,14 @@ namespace UI.Panels.LevelComplete
 {
     public class FailEmojiIMG : UIIMG, ITweenContainerBind
     {
+        private Transform _transform;
+        
         public ITweenContainer TweenContainer{get;set;}
 
         private void Awake()
         {
             TweenContainer = TweenContain.Install(this);
+            _transform = transform;
         }
 
         public override void SetActive(bool isActive)
@@ -19,7 +22,7 @@ namespace UI.Panels.LevelComplete
 
             if(Application.isPlaying == false) return;
             
-            transform.DoYoYo(Vector3.one * 1.1f, 1f);
+            _transform.DoYoYo(Vector3.one * 1.1f, 1f);
         }
 
         protected override void UnRegisterEvents()
